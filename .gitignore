@@ -1,5 +1,5 @@
 # Ignore configuration files that may contain sensitive information.
-sites/*/*settings*.php
+
 
 # Ignore paths that contain generated content.
 cache/
@@ -35,3 +35,7 @@ xmlrpc.php
 /profiles
 /scripts
 /themes
+
+sites/*/settings*.php
+
+

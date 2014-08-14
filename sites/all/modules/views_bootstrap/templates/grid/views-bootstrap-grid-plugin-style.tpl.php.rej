@@ -1,0 +1,17 @@
+***************
+*** 17,23 ****
+    <?php foreach ($columns as $column): ?>
+      <div class="row">
+        <?php foreach ($column as $key => $row): ?>
+-         <div class="col col-lg-<?php print $column_type ?>">
+            <?php print $row ?>
+          </div>
+        <?php endforeach ?>
+--- 17,23 ----
+    <?php foreach ($columns as $column): ?>
+      <div class="row">
+        <?php foreach ($column as $key => $row): ?>
++         <div class="col col-lg-<?php print $options['col_lg'] ?> col-md-<?php print $options['col_md'] ?> col-sm-<?php print $options['col_sm'] ?> col-xs-<?php print $options['col_xs'] ?>">
+            <?php print $row ?>
+          </div>
+        <?php endforeach ?>

@@ -1,0 +1,21 @@
+diff --git a/flexslider_views/theme/flexslider_views.theme.inc b/flexslider_views/theme/flexslider_views.theme.inc
+index f66c382..ec1f3fb 100644
+--- a/flexslider_views/theme/flexslider_views.theme.inc
++++ b/flexslider_views/theme/flexslider_views.theme.inc
+@@ -18,6 +18,7 @@ function theme_views_view_flexslider($vars) {
+ 
+   $img_field_name = $vars['img_field_name'];
+   $img_field_field_name = 'field_' . $img_field_name;
++  $field_data_field_alias = $view->field[$img_field_name]->field_alias;
+ 
+   $row_plugin = $view->style_plugin->row_plugin;
+ 
+@@ -45,7 +46,7 @@ function theme_views_view_flexslider($vars) {
+     //*/
+ 
+     // If an image field is set, use it to set a slide thumbnail
+-    if (isset($row->_field_data[$view->base_field]['entity']->{$img_field_name}) and isset($row->{$img_field_field_name}[0]['raw']['uri'])) {
++    if (isset($row->_field_data[$field_data_field_alias]['entity']->{$img_field_name}) and isset($row->{$img_field_field_name}[0]['raw']['uri'])) {
+       $item['thumb'] = image_style_url($optionset->imagestyle_thumbnail, $row->{$img_field_field_name}[0]['raw']['uri']);
+     }
+     else {
